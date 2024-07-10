@@ -36,7 +36,6 @@ const criarItemDeAtividade = (atividade) => {
     `;
 }
 const section = document.querySelector('section');
-
 //laços de repetição
 for(let atividade of atividades){
     //section vazia e adicionando a função em loop
