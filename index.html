@@ -7,10 +7,40 @@
     <title>Document</title>
 </head>
 <body>
+<main>
+    <form onsubmit="salvarAtividade(event)">
+        <div>
+            <input type="text" placeholder="Qual a atividade?" name="atividade" required>
+        </div>
+        <div>
+            <select name="dia">
+                <option value="2023-07-09">1 de Fevereiro</option>
+            </select>
+        </div>
+        <div>
+            <select name="hora">
+                <option value="10:30">10:30</option>
+            </select>
+        </div> 
+        <button>Salvar atividade</button>
+    </form>
     <h1>Atividades</h1>
-<section>
-</section>
+    <section>
+    </section>
+</main>
+  
 
+
+
+
+
+
+
+
+<!--Scripts-->
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/locale/pt-br.js"></script>
+<script>dayjs.locale('pt-br')</script>
 <script src="script.js"></script>
 </body>
 </html>
