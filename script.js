@@ -37,7 +37,13 @@ const formatador = (data) => {
   // arrow function
   const criarItemDeAtividade = (atividade) => {
     // let (variáveis que mudam)
-    let input = '<input type="checkbox"';
+    let input = `
+    <input onchange="concluirAtividade(event)"
+    value="${atividade.data}"
+    type="checkbox"
+    `
+
+
     if (atividade.finalizada) {
       input = input + ' checked';
     }
@@ -91,8 +97,14 @@ const formatador = (data) => {
         data: data,
         finalizada: false
       }
-      //atividade nova mais a antiga 
-      atividades = [atividade,...atividades]
+      //atividade nova mais a antiga
+      const atividadeExiste = atividades.find((atividade) =>{
+        return atividade.data = novaAtividade.data
+      }) 
+      if(atividadeExiste){
+        return alert('Dia/Hora não disponivel')
+      }
+      atividades = [novaAtividade,...atividades]
       atualizarListaDeAtividades()
   }
 
@@ -108,12 +120,13 @@ const formatador = (data) => {
     let diasSelecao = ''
     for(let dia of dias){
         const formatar = formatador(dia)
-        const diaFormatado = 
-        `${formatar.dia.numerico} de
-        ${formatar.mes}`
+        const diaFormatado =`
+        ${formatar.dia.numerico} de
+        ${formatar.mes}
+        `
 
-        diasSelecao = diasSelecao + 
-        `<option value="${dias}">${diaFormatado}</option>
+        diasSelecao +=  
+        `<option value="${dia}">${diaFormatado}</option>
         `
     }
     document.querySelector('select[name="dia"]')
@@ -125,13 +138,26 @@ const formatador = (data) => {
     let horasDisponiveis = ''
     //horario das atividades 
     for(let i = 6; i < 23; i++){
-        horasDisponiveis = horasDisponiveis + 
-         `<option value="${i}:00">${i}:00</option>
-         <option value="${i}:30">${i}:30</option>
-        `
+      const hora = String(i).padStart(2, "0")
+        horasDisponiveis +=`
+        <option value="${hora}:00">${hora}:00</option>`
+        horasDisponiveis +=`
+        <option value="${hora}:30">${hora}:30</option>`
     }
-
     document.querySelector('select[name="hora"]')
     .innerHTML = horasDisponiveis
   }
 criarHorasSelecao()
+
+const concluirAtividade = (event) =>{
+  const input = event.target
+  const dataDesteInput = input.value
+
+  const atividade = atividades.find((atividade)=>{
+    return atividade.data = dataDesteInput
+  })
+  if(!atividade){
+    return
+  }
+  atividade.finalizada = !atividade.finalizada
+}

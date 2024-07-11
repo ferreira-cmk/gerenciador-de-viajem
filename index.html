@@ -4,31 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <!--fonte inter-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <title>Rocketseat</title>
 </head>
 <body>
-<main>
-    <form onsubmit="salvarAtividade(event)">
-        <div>
-            <input type="text" placeholder="Qual a atividade?" name="atividade" required>
-        </div>
-        <div>
-            <select name="dia">
-                <option value="2023-07-09">1 de Fevereiro</option>
-            </select>
-        </div>
-        <div>
-            <select name="hora">
-                <option value="10:30">10:30</option>
-            </select>
-        </div> 
-        <button>Salvar atividade</button>
-    </form>
-    <h1>Atividades</h1>
-    <section>
-    </section>
-</main>
-  
+    <div id="app">
+        <form onsubmit="salvarAtividade(event)">
+            <div class="fields">
+                <div class="field-wrapper">
+                    <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d_9102_203)">
+                        <path d="M10.4884 1.15499C10.1759 0.842408 9.75207 0.666751 9.31008 0.666656H3.33341C2.89139 0.666656 2.46746 0.842251 2.1549 1.15481C1.84234 1.46737 1.66675 1.8913 1.66675 2.33332V8.30999C1.66684 8.75198 1.8425 9.17584 2.15508 9.48832L9.40842 16.7417C9.78718 17.118 10.2995 17.3293 10.8334 17.3293C11.3674 17.3293 11.8797 17.118 12.2584 16.7417L17.7417 11.2583C18.1181 10.8796 18.3294 10.3673 18.3294 9.83332C18.3294 9.29936 18.1181 8.78708 17.7417 8.40832L10.4884 1.15499Z" stroke="#A1A1AA" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" shape-rendering="crispEdges"/>
+                        <path d="M6.25008 5.66666C6.4802 5.66666 6.66675 5.48011 6.66675 5.24999C6.66675 5.01987 6.4802 4.83332 6.25008 4.83332C6.01996 4.83332 5.83341 5.01987 5.83341 5.24999C5.83341 5.48011 6.01996 5.66666 6.25008 5.66666Z" stroke="#A1A1AA" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" shape-rendering="crispEdges"/>
+                        </g>
+                        <defs>
+                        <filter id="filter0_d_9102_203" x="-2.95825" y="0.0416565" width="25.9126" height="25.9126" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dy="4"/>
+                        <feGaussianBlur stdDeviation="2"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_9102_203"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_9102_203" result="shape"/>
+                        </filter>
+                        </defs>
+                        </svg>
+                        
+                    <input type="text" placeholder="Qual a atividade?" name="atividade" required>
+                </div>
+                <div class="field-wrapper">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.66667 1.66666V4.99999M13.3333 1.66666V4.99999M2.5 8.33332H17.5M4.16667 3.33332H15.8333C16.7538 3.33332 17.5 4.07952 17.5 4.99999V16.6667C17.5 17.5871 16.7538 18.3333 15.8333 18.3333H4.16667C3.24619 18.3333 2.5 17.5871 2.5 16.6667V4.99999C2.5 4.07952 3.24619 3.33332 4.16667 3.33332Z" stroke="#A1A1AA" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                        
+                    <select name="dia">
+                        <option value="2023-07-09">1 de Fevereiro</option>
+                    </select>
+                </div>
+                <div class="field-wrapper">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.0001 4.99999V9.99999L13.3334 11.6667M18.3334 9.99999C18.3334 14.6024 14.6025 18.3333 10.0001 18.3333C5.39771 18.3333 1.66675 14.6024 1.66675 9.99999C1.66675 5.39762 5.39771 1.66666 10.0001 1.66666C14.6025 1.66666 18.3334 5.39762 18.3334 9.99999Z" stroke="#A1A1AA" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                        
+                    <select name="hora">
+                        <option value="10:30">10:30</option>
+                    </select>
+                </div>
+            </div>
+            <button>Salvar atividade</button>
+        </form>
+        <main>
+            <h1>Atividades</h1>
+            <section>
+            </section>
+        </main>
+    </div>
 
 
 

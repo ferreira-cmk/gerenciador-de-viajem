@@ -1,4 +1,53 @@
-html{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*box model*/
+}
+html, input, select, butto, option{
+    font-family: 'Inter', sans-serif;
     background-color: #09090B;
     color: #fafafa;
+}
+/*app*/
+#app{
+    padding: 40px 20px;
+    max-width: 320px;
+    margin: auto;
+}
+
+/*form*/
+input, select{
+    all:unset;
+}
+input, select, button{
+    width: 100%;
+}
+.field{
+    display: grid;
+    gap: 8px
+}
+.field-wrapper{
+    padding: 18px;
+    background-color: #09090B;
+    border: 1px solid #27272A;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    gap:10px
+}
+/*da cor quando clica*/
+.field-wrapper:focus-within{
+    outline: 2px solid yellowgreen;
+}
+button{
+    margin-top: 12px;
+    border: none;
+    padding: 12px 20px;
+    background-color:#AFF445;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.02em;
+    color: #123F00;
 }
